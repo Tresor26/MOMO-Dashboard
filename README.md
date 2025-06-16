@@ -137,27 +137,6 @@ MOMO-Dashboard/
 
 ---
 
-## Contributors
-
-See AUTHORS for the full list.
-
----
-
-## License
-
-This project is for educational and personal use. Please respect privacy and data security when handling SMS exports.
-
----
-
-## Acknowledgements
-
-- [Flask](https://flask.palletsprojects.com/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Chart.js](https://www.chartjs.org/)
-
----
-
 ## System Architecture
 
 ```
@@ -186,8 +165,29 @@ This project is for educational and personal use. Please respect privacy and dat
 
 **[Momo dashboard system architecture diagram](https://drive.google.com/file/d/1iwjjYgTkvao590s1Fp0hnuU7AJLwO_1K/view?usp=sharing)**
 
-Data Flow:
+**Data Flow:**
+- User exports SMS to `momo_sms.xml`.
+- Backend processes the XML and populates the SQLite database.
+- Frontend fetches data from the backend API and displays it.
 
-User exports SMS to momo_sms.xml.
-Backend processes the XML and populates the SQLite database.
-Frontend fetches data from the backend API and displays it.
+## Contributors
+
+See AUTHORS for the full list.
+
+---
+
+## License
+
+This project is for educational and personal use. Please respect privacy and data security when handling SMS exports.
+
+---
+
+## Acknowledgements
+
+- [Flask](https://flask.palletsprojects.com/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Chart.js](https://www.chartjs.org/)
+
+---
+
