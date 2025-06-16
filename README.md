@@ -163,7 +163,7 @@ MOMO-Dashboard/
         |                                    +-------------------+
 ```
 
-**[Momo dashboard system architecture diagram](https://drive.google.com/file/d/1iwjjYgTkvao590s1Fp0hnuU7AJLwO_1K/view?usp=sharing)**
+**<a href="https://drive.google.com/file/d/1iwjjYgTkvao590s1Fp0hnuU7AJLwO_1K/view?usp=sharing" target="_blank" rel="noopener noreferrer">Momo dashboard system architecture diagram</a>**
 
 **Data Flow:**
 - User exports SMS to `momo_sms.xml`.
@@ -184,14 +184,14 @@ This project is for educational and personal use. Please respect privacy and dat
 
 ## Acknowledgements
 
-- [Flask](https://flask.palletsprojects.com/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Chart.js](https://www.chartjs.org/)
+- <a href="https://flask.palletsprojects.com/" target="_blank" rel="noopener noreferrer">Flask</a>
+- <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">React</a>
+- <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">Tailwind CSS</a>
+- <a href="https://www.chartjs.org/" target="_blank" rel="noopener noreferrer">Chart.js</a>
 
 ---
 
 ## Explanation Video
 
-[Watch the MOMO Dashboard Explanation Video](https://www.loom.com/share/f99443a960f04f51b17f87c2dd240abd?sid=9dc6b1b9-f4dd-4d50-87f6-bd8b7e5f0812)
+<a href="https://www.loom.com/share/f99443a960f04f51b17f87c2dd240abd?sid=9dc6b1b9-f4dd-4d50-87f6-bd8b7e5f0812" target="_blank" rel="noopener noreferrer">Watch the MOMO Dashboard Explanation Video</a>
 
