@@ -184,6 +184,8 @@ This project is for educational and personal use. Please respect privacy and dat
         |                                    +-------------------+
 ```
 
+**[Momo dashboard system architecture diagram](https://drive.google.com/file/d/1iwjjYgTkvao590s1Fp0hnuU7AJLwO_1K/view?usp=sharing)**
+
 Data Flow:
 
 User exports SMS to momo_sms.xml.
