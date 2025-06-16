@@ -191,3 +191,7 @@ This project is for educational and personal use. Please respect privacy and dat
 
 ---
 
+## Explanation Video
+
+[Watch the MOMO Dashboard Explanation Video](https://www.loom.com/share/f99443a960f04f51b17f87c2dd240abd?sid=9dc6b1b9-f4dd-4d50-87f6-bd8b7e5f0812)
+
