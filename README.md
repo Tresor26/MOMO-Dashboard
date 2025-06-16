@@ -155,3 +155,37 @@ This project is for educational and personal use. Please respect privacy and dat
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Chart.js](https://www.chartjs.org/)
+
+---
+
+## System Architecture
+
+```
++-------------------+         REST API         +-------------------+         +-------------------+
+|                   | <---------------------> |                   | <-----> |                   |
+|   React Frontend  |                         |   Flask Backend    |         |     SQLite DB     |
+| (momo-dashboard/) |                         |   (backend/)       |         | (momo_transactions|
+|                   |                         |                   |         |      .db)         |
++-------------------+                         +-------------------+         +-------------------+
+        ^                                              ^
+        |                                              |
+        |                                              |
+        |                                              v
+        |                                    +-------------------+
+        |                                    |   Input Files     |
+        |                                    | (momo_sms.xml)    |
+        |                                    +-------------------+
+        |                                              ^
+        |                                              |
+        |                                    +-------------------+
+        |                                    |   Log File        |
+        |                                    | (unprocessed_     |
+        |                                    |   momo.log)       |
+        |                                    +-------------------+
+```
+
+Data Flow:
+
+User exports SMS to momo_sms.xml.
+Backend processes the XML and populates the SQLite database.
+Frontend fetches data from the backend API and displays it.
