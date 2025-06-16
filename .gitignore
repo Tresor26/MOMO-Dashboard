@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+*.log
+venv/
+env/
+*.env
+*.egg-info/
+
+# VSCode
+.vscode/
+
+# Node
+node_modules/
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# React
+*.local
+.env.*.local
+
+# Misc
+*.bak
+*.swp
+*.swo
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Backup
+*~
+
+# Others
+unprocessed_momo.log
+momo_transactions.db

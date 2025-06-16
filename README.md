@@ -60,39 +60,52 @@ MOMO-Dashboard/
 
 - Node.js (v18+ recommended)
 - Python 3.8+
-- pip
+- pip (comes with Python)
 
-### Backend Setup
+---
 
-1. **Install dependencies:**
-   ```bash
-   pip install flask flask-cors
+## Backend Setup (Flask API)
+
+1. **Open a terminal and navigate to the backend directory:**
+   ```powershell
+   cd backend
    ```
 
-2. **Prepare your SMS export:**
+2. **Install Python dependencies:**
+   ```powershell
+   py -m pip install -r requirements.txt
+   ```
+
+3. **Prepare your SMS export:**
    - Place your exported `momo_sms.xml` in the `backend/` directory.
 
-3. **Process SMS and populate the database:**
-   ```bash
-   python backend/process_momo.py
+4. **Process SMS and populate the database:**
+   ```powershell
+   py process_momo.py
    ```
 
-4. **Run the Flask API:**
-   ```bash
-   python backend/app.py
+5. **Run the Flask API:**
+   ```powershell
+   py app.py
    ```
    - The API will be available at `http://localhost:5000/api/transactions`.
 
-### Frontend Setup
+---
 
-1. **Install dependencies:**
-   ```bash
+## Frontend Setup (React Dashboard)
+
+1. **Open a new terminal and navigate to the frontend directory:**
+   ```powershell
    cd momo-dashboard
+   ```
+
+2. **Install Node.js dependencies:**
+   ```powershell
    npm install
    ```
 
-2. **Start the React app:**
-   ```bash
+3. **Start the React app:**
+   ```powershell
    npm start
    ```
    - The dashboard will be available at `http://localhost:3000`.
@@ -103,15 +116,24 @@ MOMO-Dashboard/
 
 - **Dashboard:** View summaries, charts, and lists of your MoMo transactions.
 - **Filters:** Use the filter panel to narrow down transactions by category, date, or amount.
-- **Unprocessed SMS:** Check unprocessed_momo.log for SMS messages that could not be categorized.
+- **Unprocessed SMS:** Check `unprocessed_momo.log` for SMS messages that could not be categorized.
+
+---
+
+## Troubleshooting
+
+- If you get a `pip` not found error, use `py -m pip` instead.
+- Make sure Python and Node.js are added to your system PATH.
+- If you change your SMS export, re-run `py process_momo.py` before restarting the backend.
+- If you encounter CORS issues, ensure both backend and frontend are running on localhost.
 
 ---
 
 ## Customization
 
-- **Categories & Regex:** Edit process_momo.py to adjust or add transaction categories and regex patterns.
-- **Tailwind Theme:** Customize colors in tailwind.config.js.
-- **API Endpoints:** Extend app.py for more API features.
+- **Categories & Regex:** Edit `process_momo.py` to adjust or add transaction categories and regex patterns.
+- **Tailwind Theme:** Customize colors in `tailwind.config.js`.
+- **API Endpoints:** Extend `app.py` for more API features.
 
 ---
 
@@ -133,4 +155,37 @@ This project is for educational and personal use. Please respect privacy and dat
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Chart.js](https://www.chartjs.org/)
+
+---
+
+## System Architecture
+
 ```
++-------------------+         REST API         +-------------------+         +-------------------+
+|                   | <---------------------> |                   | <-----> |                   |
+|   React Frontend  |                         |   Flask Backend    |         |     SQLite DB     |
+| (momo-dashboard/) |                         |   (backend/)       |         | (momo_transactions|
+|                   |                         |                   |         |      .db)         |
++-------------------+                         +-------------------+         +-------------------+
+        ^                                              ^
+        |                                              |
+        |                                              |
+        |                                              v
+        |                                    +-------------------+
+        |                                    |   Input Files     |
+        |                                    | (momo_sms.xml)    |
+        |                                    +-------------------+
+        |                                              ^
+        |                                              |
+        |                                    +-------------------+
+        |                                    |   Log File        |
+        |                                    | (unprocessed_     |
+        |                                    |   momo.log)       |
+        |                                    +-------------------+
+```
+
+Data Flow:
+
+User exports SMS to momo_sms.xml.
+Backend processes the XML and populates the SQLite database.
+Frontend fetches data from the backend API and displays it.
